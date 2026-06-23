@@ -1,0 +1,148 @@
+{
+  "unknown_rate_by_region_size_bucket": {
+    "large": {
+      "count": 221,
+      "unknown_count": 18,
+      "unknown_rate": 0.08144796380090498
+    },
+    "medium": {
+      "count": 48,
+      "unknown_count": 34,
+      "unknown_rate": 0.7083333333333334
+    },
+    "small": {
+      "count": 53,
+      "unknown_count": 43,
+      "unknown_rate": 0.8113207547169812
+    },
+    "tiny": {
+      "count": 10073,
+      "unknown_count": 8125,
+      "unknown_rate": 0.806611734339323
+    }
+  },
+  "unknown_rate_by_severity_bucket": {
+    "critical": {
+      "count": 10,
+      "unknown_count": 0,
+      "unknown_rate": 0.0
+    },
+    "high": {
+      "count": 192,
+      "unknown_count": 0,
+      "unknown_rate": 0.0
+    },
+    "low": {
+      "count": 7573,
+      "unknown_count": 7249,
+      "unknown_rate": 0.9572164267793477
+    },
+    "medium": {
+      "count": 2620,
+      "unknown_count": 971,
+      "unknown_rate": 0.3706106870229008
+    }
+  },
+  "unknown_rate_by_texture_bucket": {
+    "low": {
+      "count": 9461,
+      "unknown_count": 7470,
+      "unknown_rate": 0.7895571292675193
+    },
+    "medium": {
+      "count": 934,
+      "unknown_count": 750,
+      "unknown_rate": 0.8029978586723768
+    }
+  },
+  "unknown_rate_by_confidence_bucket": {
+    "high": {
+      "count": 1684,
+      "unknown_count": 7,
+      "unknown_rate": 0.004156769596199525
+    },
+    "low": {
+      "count": 2610,
+      "unknown_count": 2610,
+      "unknown_rate": 1.0
+    },
+    "medium": {
+      "count": 6101,
+      "unknown_count": 5603,
+      "unknown_rate": 0.9183740370431077
+    }
+  },
+  "improved_unknown_rate_by_region_size_bucket": {
+    "large": {
+      "count": 221,
+      "unknown_count": 11,
+      "unknown_rate": 0.049773755656108594
+    },
+    "medium": {
+      "count": 48,
+      "unknown_count": 7,
+      "unknown_rate": 0.14583333333333334
+    },
+    "small": {
+      "count": 53,
+      "unknown_count": 7,
+      "unknown_rate": 0.1320754716981132
+    },
+    "tiny": {
+      "count": 10073,
+      "unknown_count": 1440,
+      "unknown_rate": 0.14295641814752308
+    }
+  },
+  "improved_unknown_rate_by_severity_bucket": {
+    "critical": {
+      "count": 10,
+      "unknown_count": 0,
+      "unknown_rate": 0.0
+    },
+    "high": {
+      "count": 192,
+      "unknown_count": 5,
+      "unknown_rate": 0.026041666666666668
+    },
+    "low": {
+      "count": 7573,
+      "unknown_count": 1202,
+      "unknown_rate": 0.15872177472600027
+    },
+    "medium": {
+      "count": 2620,
+      "unknown_count": 258,
+      "unknown_rate": 0.0984732824427481
+    }
+  },
+  "improved_unknown_rate_by_texture_bucket": {
+    "low": {
+      "count": 9461,
+      "unknown_count": 1449,
+      "unknown_rate": 0.15315505760490433
+    },
+    "medium": {
+      "count": 934,
+      "unknown_count": 16,
+      "unknown_rate": 0.017130620985010708
+    }
+  },
+  "improved_unknown_rate_by_confidence_bucket": {
+    "high": {
+      "count": 1684,
+      "unknown_count": 11,
+      "unknown_rate": 0.006532066508313539
+    },
+    "low": {
+      "count": 2610,
+      "unknown_count": 30,
+      "unknown_rate": 0.011494252873563218
+    },
+    "medium": {
+      "count": 6101,
+      "unknown_count": 1424,
+      "unknown_rate": 0.2334043599409933
+    }
+  }
+}

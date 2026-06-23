@@ -1,0 +1,25 @@
+{
+  "stage": "stage10a_localized_composite_full_200_construction",
+  "total_cases": 200,
+  "constructed_cases": 200,
+  "failed_cases": 0,
+  "cases_by_attack_type": {
+    "object_removal": 50,
+    "inpainting": 50,
+    "local_replacement": 50,
+    "local_style_edit": 50
+  },
+  "construction_runtime_seconds": 54.190104961395264,
+  "mean_mask_area_ratio": 0.13359886169433594,
+  "outside_region_preserved_pass_count": 200,
+  "inside_region_changed_pass_count": 200,
+  "failed_samples": [],
+  "rule": "tampered_local = mask * diffusion_generated + (1-mask) * watermarked_image",
+  "constraints": {
+    "no_training": true,
+    "no_vlm": true,
+    "no_128bit_payload": true,
+    "watermark_embedding_modified": false,
+    "robust_payload_bits": 64
+  }
+}

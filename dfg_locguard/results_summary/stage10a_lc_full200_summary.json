@@ -1,0 +1,304 @@
+{
+  "construction_summary": {
+    "stage": "stage10a_localized_composite_full_200_construction",
+    "total_cases": 200,
+    "constructed_cases": 200,
+    "failed_cases": 0,
+    "cases_by_attack_type": {
+      "object_removal": 50,
+      "inpainting": 50,
+      "local_replacement": 50,
+      "local_style_edit": 50
+    },
+    "construction_runtime_seconds": 54.190104961395264,
+    "mean_mask_area_ratio": 0.13359886169433594,
+    "outside_region_preserved_pass_count": 200,
+    "inside_region_changed_pass_count": 200,
+    "failed_samples": [],
+    "rule": "tampered_local = mask * diffusion_generated + (1-mask) * watermarked_image",
+    "constraints": {
+      "no_training": true,
+      "no_vlm": true,
+      "no_128bit_payload": true,
+      "watermark_embedding_modified": false,
+      "robust_payload_bits": 64
+    }
+  },
+  "evaluation_summary": {
+    "stage": "stage10a_real_aigc_attack_eval",
+    "completed": true,
+    "failed_stage": null,
+    "total_samples": 200,
+    "samples_by_attack_type": {
+      "object_removal": 50,
+      "inpainting": 50,
+      "local_replacement": 50,
+      "local_style_edit": 50
+    },
+    "failed_generation": 0,
+    "failed_evaluation": 0,
+    "runtime_total_seconds": 227.72882533073425,
+    "runtime_per_sample_seconds": 1.1386441266536713,
+    "stage8c_payload_recovery": {
+      "stage": "stage10a_real_attack_payload_recovery",
+      "total_samples": 200,
+      "evaluated_samples": 200,
+      "failed_cases": 0,
+      "payload_variant": "P2_id_plus_compact_capsule_64",
+      "mean_bit_accuracy": 0.999765625,
+      "mean_payload_recovery_accuracy": 0.99,
+      "mean_capsule_recovery_accuracy": 1.0,
+      "mean_auth_success": 0.99
+    },
+    "localization": {
+      "iou": 0.9546367875095549,
+      "dice": 0.9758166158828507,
+      "precision": 0.9578357058095728,
+      "recall": 0.9965713142785205,
+      "mae": 0.007111625671386719
+    },
+    "report_quality": {
+      "unknown_before_stage8e": 0.7907647907647908,
+      "unknown_after_stage8e": 0.14093314093314094,
+      "f3_unknown_rate": 0.22920203735144312,
+      "f3_reports": 1178,
+      "f3_reports_per_image": 5.89,
+      "f3_gt_coverage_retained": 0.9965713142785205,
+      "f3_predicted_area_retained": 1.0,
+      "f3_no_report_images": 0
+    },
+    "by_attack_type": [
+      {
+        "attack_type": "object_removal",
+        "sample_count": 50,
+        "iou": 0.9575266869938365,
+        "dice": 0.9773415705905901,
+        "payload_recovery": 1.0,
+        "auth_success": 1.0,
+        "bit_accuracy": 1.0,
+        "capsule_recovery": 1.0,
+        "f3_unknown_rate": 0.28465079365079365,
+        "f3_reports_per_image": 5.64,
+        "gt_coverage_retained": 0.9967278644155313,
+        "predicted_area_retained": 1.0,
+        "no_report_images": 0
+      },
+      {
+        "attack_type": "inpainting",
+        "sample_count": 50,
+        "iou": 0.9515284251543845,
+        "dice": 0.9741542751978964,
+        "payload_recovery": 0.98,
+        "auth_success": 0.98,
+        "bit_accuracy": 0.999375,
+        "capsule_recovery": 1.0,
+        "f3_unknown_rate": 0.23198312798312798,
+        "f3_reports_per_image": 6.18,
+        "gt_coverage_retained": 0.9964096152224664,
+        "predicted_area_retained": 1.0,
+        "no_report_images": 0
+      },
+      {
+        "attack_type": "local_replacement",
+        "sample_count": 50,
+        "iou": 0.9576844562906193,
+        "dice": 0.9774339397230666,
+        "payload_recovery": 1.0,
+        "auth_success": 1.0,
+        "bit_accuracy": 1.0,
+        "capsule_recovery": 1.0,
+        "f3_unknown_rate": 0.25384077034077035,
+        "f3_reports_per_image": 5.58,
+        "gt_coverage_retained": 0.9967124349465699,
+        "predicted_area_retained": 1.0,
+        "no_report_images": 0
+      },
+      {
+        "attack_type": "local_style_edit",
+        "sample_count": 50,
+        "iou": 0.9518075815993795,
+        "dice": 0.9743366780198494,
+        "payload_recovery": 0.98,
+        "auth_success": 0.98,
+        "bit_accuracy": 0.9996875,
+        "capsule_recovery": 1.0,
+        "f3_unknown_rate": 0.24266161616161613,
+        "f3_reports_per_image": 6.16,
+        "gt_coverage_retained": 0.9964353425295139,
+        "predicted_area_retained": 1.0,
+        "no_report_images": 0
+      }
+    ],
+    "run_records": [
+      {
+        "stage": "stage8d_dual_branch_report",
+        "returncode": 0,
+        "runtime_seconds": 34.33750653266907,
+        "stdout_log": "/data/watermark_exps/dfg_locguard/outputs/stage10a_localized_composite_full_200_eval/logs/stage8d_dual_branch_report.stdout.log",
+        "stderr_log": "/data/watermark_exps/dfg_locguard/outputs/stage10a_localized_composite_full_200_eval/logs/stage8d_dual_branch_report.stderr.log",
+        "command": [
+          "/root/miniconda3/bin/python",
+          "/root/autodl-tmp/watermark_exps/dfg_locguard/scripts/run_stage8d_end_to_end_dual_branch_report.py",
+          "--project_root",
+          "/root/autodl-tmp/watermark_exps",
+          "--stage1_dir",
+          "/data/watermark_exps/dfg_locguard/outputs/stage10a_localized_composite_full_200_eval/stage10a_stage1_like_inputs",
+          "--stage8c_dir",
+          "/data/watermark_exps/dfg_locguard/outputs/stage10a_localized_composite_full_200_eval/stage8c_real_payload_recovery",
+          "--output_dir",
+          "/data/watermark_exps/dfg_locguard/outputs/stage10a_localized_composite_full_200_eval/stage8d",
+          "--max_samples",
+          "200",
+          "--mask_threshold",
+          "127",
+          "--contact_sheet_samples",
+          "50",
+          "--overwrite"
+        ]
+      },
+      {
+        "stage": "stage8e_report_quality_audit",
+        "returncode": 0,
+        "runtime_seconds": 8.16937780380249,
+        "stdout_log": "/data/watermark_exps/dfg_locguard/outputs/stage10a_localized_composite_full_200_eval/logs/stage8e_report_quality_audit.stdout.log",
+        "stderr_log": "/data/watermark_exps/dfg_locguard/outputs/stage10a_localized_composite_full_200_eval/logs/stage8e_report_quality_audit.stderr.log",
+        "command": [
+          "/root/miniconda3/bin/python",
+          "/root/autodl-tmp/watermark_exps/dfg_locguard/scripts/run_stage8e_report_quality_audit.py",
+          "--project_root",
+          "/root/autodl-tmp/watermark_exps",
+          "--stage8d_dir",
+          "/data/watermark_exps/dfg_locguard/outputs/stage10a_localized_composite_full_200_eval/stage8d",
+          "--stage1_dir",
+          "/data/watermark_exps/dfg_locguard/outputs/stage10a_localized_composite_full_200_eval/stage10a_stage1_like_inputs",
+          "--output_dir",
+          "/data/watermark_exps/dfg_locguard/outputs/stage10a_localized_composite_full_200_eval/stage8e",
+          "--max_samples",
+          "200",
+          "--contact_sheet_samples",
+          "50",
+          "--overwrite"
+        ]
+      },
+      {
+        "stage": "stage8f_report_region_aggregation",
+        "returncode": 0,
+        "runtime_seconds": 111.43779826164246,
+        "stdout_log": "/data/watermark_exps/dfg_locguard/outputs/stage10a_localized_composite_full_200_eval/logs/stage8f_report_region_aggregation.stdout.log",
+        "stderr_log": "/data/watermark_exps/dfg_locguard/outputs/stage10a_localized_composite_full_200_eval/logs/stage8f_report_region_aggregation.stderr.log",
+        "command": [
+          "/root/miniconda3/bin/python",
+          "/root/autodl-tmp/watermark_exps/dfg_locguard/scripts/run_stage8f_report_region_aggregation.py",
+          "--project_root",
+          "/root/autodl-tmp/watermark_exps",
+          "--stage8e_dir",
+          "/data/watermark_exps/dfg_locguard/outputs/stage10a_localized_composite_full_200_eval/stage8e",
+          "--stage1_dir",
+          "/data/watermark_exps/dfg_locguard/outputs/stage10a_localized_composite_full_200_eval/stage10a_stage1_like_inputs",
+          "--output_dir",
+          "/data/watermark_exps/dfg_locguard/outputs/stage10a_localized_composite_full_200_eval/stage8f",
+          "--max_samples",
+          "200",
+          "--mask_threshold",
+          "127",
+          "--contact_sheet_samples",
+          "50",
+          "--overwrite"
+        ]
+      }
+    ],
+    "constraints": {
+      "no_training": true,
+      "no_vlm": true,
+      "no_128bit_payload": true,
+      "watermark_embedding_modified": false,
+      "verification_original_access": false,
+      "gt_mask_usage": [
+        "evaluation_only"
+      ]
+    },
+    "stage8f_best_by_selection_report_quality": {
+      "unknown_before_stage8e": 0.7907647907647908,
+      "unknown_after_stage8e": 0.14093314093314094,
+      "f3_unknown_rate": 0.06513409961685823,
+      "f3_reports_per_image": 1.305,
+      "f3_gt_coverage_retained": 0.9965642634245717,
+      "f3_predicted_area_retained": 0.9982082284400725,
+      "f3_no_report_images": 0
+    },
+    "stage8f_main_strategy": "F3_merge_nearby_fragments"
+  },
+  "eval_record": {
+    "skipped": true
+  },
+  "four_setting_comparison": [
+    {
+      "setting": "Stage9C_synthetic_1000",
+      "iou": 0.8928331973424926,
+      "dice": 0.9398208447718827,
+      "precision": 0.9210072993936756,
+      "recall": 0.96451697277382,
+      "bit_accuracy": 0.99971875,
+      "payload_recovery": 0.989,
+      "auth_success": 0.989,
+      "f3_unknown": 0.1364343766211309,
+      "reports_per_image": 5.783,
+      "predicted_mask_area_ratio": "",
+      "gt_coverage": 0.96451697277382,
+      "capsule_recovery": 0.99965,
+      "predicted_area_retained": 1.0,
+      "interpretation": "synthetic local tamper full evaluation"
+    },
+    {
+      "setting": "Stage10A_unconstrained_diffusion_200",
+      "iou": 0.13359886169433594,
+      "dice": 0.23037736446106755,
+      "precision": 0.13359886169433594,
+      "recall": 1.0,
+      "bit_accuracy": 0.50578125,
+      "payload_recovery": 0.0,
+      "auth_success": 0.0,
+      "f3_unknown": 0.0,
+      "reports_per_image": 1.0,
+      "predicted_mask_area_ratio": 1.0,
+      "gt_coverage": 1.0,
+      "capsule_recovery": 0.50975,
+      "predicted_area_retained": 1.0,
+      "interpretation": "global diffusion re-rendering / watermark laundering stress test"
+    },
+    {
+      "setting": "Stage10A_localized_composite_diagnostic_40",
+      "iou": 0.9665185712973751,
+      "dice": 0.9829425828168702,
+      "precision": 0.9688461451110904,
+      "recall": 0.9975210389299878,
+      "bit_accuracy": 1.0,
+      "payload_recovery": 1.0,
+      "capsule_recovery": 1.0,
+      "auth_success": 1.0,
+      "f3_unknown": 0.13333333333333333,
+      "reports_per_image": 3.0,
+      "gt_coverage": 0.9975177266768928,
+      "predicted_area_retained": 1.0,
+      "predicted_mask_area_ratio": 0.15695590972900392,
+      "interpretation": "40-sample diagnostic preserving unmasked watermarked pixels"
+    },
+    {
+      "setting": "Stage10A_localized_composite_full_200",
+      "iou": 0.9546367875095549,
+      "dice": 0.9758166158828507,
+      "precision": 0.9578357058095728,
+      "recall": 0.9965713142785205,
+      "bit_accuracy": 0.999765625,
+      "payload_recovery": 0.99,
+      "auth_success": 0.99,
+      "f3_unknown": 0.22920203735144312,
+      "reports_per_image": 5.89,
+      "predicted_mask_area_ratio": 0.14005962371826172,
+      "gt_coverage": 0.9965713142785205,
+      "capsule_recovery": 1.0,
+      "predicted_area_retained": 1.0,
+      "interpretation": "fair local AIGC editing evaluation preserving unmasked watermarked pixels"
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "payload_failed_count": 2,
+  "auth_failed_count": 2,
+  "payload_failed_sample_ids": [
+    "inpainting_029_0477",
+    "local_style_edit_022_0995"
+  ],
+  "auth_failed_sample_ids": [
+    "inpainting_029_0477",
+    "local_style_edit_022_0995"
+  ],
+  "by_attack_type": [
+    {
+      "attack_type": "object_removal",
+      "sample_count": 50,
+      "iou": 0.9575266869938365,
+      "dice": 0.9773415705905901,
+      "payload_recovery": 1.0,
+      "auth_success": 1.0,
+      "bit_accuracy": 1.0,
+      "capsule_recovery": 1.0,
+      "f3_unknown_rate": 0.28465079365079365,
+      "f3_reports_per_image": 5.64,
+      "gt_coverage_retained": 0.9967278644155313,
+      "predicted_area_retained": 1.0,
+      "no_report_images": 0
+    },
+    {
+      "attack_type": "inpainting",
+      "sample_count": 50,
+      "iou": 0.9515284251543845,
+      "dice": 0.9741542751978964,
+      "payload_recovery": 0.98,
+      "auth_success": 0.98,
+      "bit_accuracy": 0.999375,
+      "capsule_recovery": 1.0,
+      "f3_unknown_rate": 0.23198312798312798,
+      "f3_reports_per_image": 6.18,
+      "gt_coverage_retained": 0.9964096152224664,
+      "predicted_area_retained": 1.0,
+      "no_report_images": 0
+    },
+    {
+      "attack_type": "local_replacement",
+      "sample_count": 50,
+      "iou": 0.9576844562906193,
+      "dice": 0.9774339397230666,
+      "payload_recovery": 1.0,
+      "auth_success": 1.0,
+      "bit_accuracy": 1.0,
+      "capsule_recovery": 1.0,
+      "f3_unknown_rate": 0.25384077034077035,
+      "f3_reports_per_image": 5.58,
+      "gt_coverage_retained": 0.9967124349465699,
+      "predicted_area_retained": 1.0,
+      "no_report_images": 0
+    },
+    {
+      "attack_type": "local_style_edit",
+      "sample_count": 50,
+      "iou": 0.9518075815993795,
+      "dice": 0.9743366780198494,
+      "payload_recovery": 0.98,
+      "auth_success": 0.98,
+      "bit_accuracy": 0.9996875,
+      "capsule_recovery": 1.0,
+      "f3_unknown_rate": 0.24266161616161613,
+      "f3_reports_per_image": 6.16,
+      "gt_coverage_retained": 0.9964353425295139,
+      "predicted_area_retained": 1.0,
+      "no_report_images": 0
+    }
+  ]
+}
