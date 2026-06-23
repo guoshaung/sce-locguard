@@ -44,6 +44,20 @@ Recommended implementation:
 - Evaluate only EditGuard mask and copyright recovery.
 - Disable semantic capsule claims and Stage8E/8F report readout for the pure baseline.
 
+## Metrics Extractable Without Rerunning Large Models
+
+Several comparison rows can already be assembled from existing outputs:
+
+| Source Output | Extractable Fields | Notes |
+|---|---|---|
+| Stage9C synthetic 1000 | IoU, Dice, precision, recall, bit accuracy, payload recovery, auth success, F3 unknown, reports/image, GT coverage | This is the controlled synthetic local tamper setting. |
+| Stage10A unconstrained diffusion 200 | IoU, Dice, precision, recall, bit accuracy, payload recovery, auth success, predicted mask area ratio, failure mode | This should be reported as global diffusion re-rendering / watermark laundering stress test. |
+| Stage10A localized-composite diagnostic 40 | IoU, Dice, payload/auth recovery, F3 unknown, reports/image | Diagnostic proof that preserving the unmasked watermarked region restores the pipeline. |
+| Stage10A localized-composite full 200 | IoU, Dice, payload/auth recovery, F3 metrics, by-attack-type breakdown | Fair local AIGC edit evaluation at medium scale. |
+| Stage10A localized-composite scale1000 | IoU, Dice, payload/auth recovery, F3 metrics, by-attack-type breakdown, unknown diagnosis | Fair local AIGC edit evaluation at full scale. |
+
+These rows should be used to prepare the SCE-LocGuard side of Stage 10B before running any external baseline.
+
 ## OmniGuard Feasibility
 
 OmniGuard is a strong related method / possible baseline because it explicitly targets robust copyright protection and tamper localization under AIGC editing and degradation.
@@ -67,7 +81,7 @@ Feasibility risks before running:
 | dependencies | likely PyTorch/diffusion/image-processing stack; exact environment must be read from repo |
 | expected disk | unknown; reserve several GB for checkpoint and generated outputs |
 | expected runtime | unknown; likely manageable for inference on RTX 4090 after setup |
-| license | must be checked from repository before paper use |
+| license | must be checked from repository before paper use; do not assume permission beyond public availability |
 | reproducibility | partial risk because README says complete training/testing process is still being released |
 
 Do not download OmniGuard checkpoint until the user confirms. First Stage 10B action should be a lightweight repository inspection and environment estimate.

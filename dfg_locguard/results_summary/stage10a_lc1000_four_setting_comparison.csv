@@ -1,0 +1,5 @@
+setting,iou,dice,precision,recall,bit_accuracy,payload_recovery,capsule_recovery,auth_success,f3_unknown,reports_per_image,gt_coverage,predicted_area_retained,predicted_mask_area_ratio,interpretation
+Stage9C_synthetic_1000,0.8928331973424926,0.9398208447718827,0.9210072993936756,0.96451697277382,0.99971875,0.989,0.99965,0.989,0.1364343766211309,5.783,0.96451697277382,1.0,,synthetic local tamper full evaluation
+Stage10A_unconstrained_diffusion_200,0.13359886169433594,0.23037736446106755,0.13359886169433594,1.0,0.50578125,0.0,0.50975,0.0,0.0,1.0,1.0,1.0,1.0,global diffusion re-rendering / watermark laundering stress test
+Stage10A_localized_composite_diagnostic_40,0.9665185712973751,0.9829425828168702,0.9688461451110904,0.9975210389299878,1.0,1.0,1.0,1.0,0.13333333333333333,3.0,0.9975177266768928,1.0,0.15695590972900392,40-sample diagnostic preserving unmasked watermarked pixels
+Stage10A_localized_composite_scale1000,0.9573244668616256,0.9778285735841605,0.9605053632820596,0.9965887139596729,0.9996875,0.984,0.9997,0.984,0.23141749536490813,5.933,0.9965887139596729,1.0,0.14497387313842774,scale1000 fair local AIGC editing evaluation

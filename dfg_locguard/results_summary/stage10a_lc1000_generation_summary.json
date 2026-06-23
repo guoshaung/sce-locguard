@@ -1,0 +1,27 @@
+{
+  "stage": "stage10a_lc_scale1000_generation",
+  "total_cases": 1000,
+  "generated_cases": 1000,
+  "failed_cases": 0,
+  "generation_success_rate": 1.0,
+  "samples_by_attack_type": {
+    "object_removal": 250,
+    "inpainting": 250,
+    "local_replacement": 250,
+    "local_style_edit": 250
+  },
+  "total_runtime_seconds": 1410.0783812999725,
+  "mean_runtime_seconds": 1.0033553121089935,
+  "peak_gpu_memory_mb": 11575.60595703125,
+  "model_id": "stable-diffusion-v1-5/stable-diffusion-inpainting",
+  "hf_cache_dir": "/data/watermark_exps/models/hf_cache",
+  "manifest_path": "/root/autodl-tmp/watermark_exps/dfg_locguard/outputs/stage10a_lc_scale1000_generation/stage10a_lc_scale1000_manifest.csv",
+  "failed_samples": [],
+  "constraints": {
+    "no_training": true,
+    "no_vlm": true,
+    "no_128bit_payload": true,
+    "watermark_embedding_modified": false,
+    "robust_payload_bits": 64
+  }
+}

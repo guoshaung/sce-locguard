@@ -1,0 +1,204 @@
+{
+  "stage": "stage10a_real_aigc_attack_eval",
+  "completed": true,
+  "failed_stage": null,
+  "total_samples": 1000,
+  "samples_by_attack_type": {
+    "object_removal": 250,
+    "inpainting": 250,
+    "local_replacement": 250,
+    "local_style_edit": 250
+  },
+  "failed_generation": 0,
+  "failed_evaluation": 0,
+  "runtime_total_seconds": 826.9886162281036,
+  "runtime_per_sample_seconds": 0.8269886162281036,
+  "stage8c_payload_recovery": {
+    "stage": "stage10a_real_attack_payload_recovery",
+    "total_samples": 1000,
+    "evaluated_samples": 1000,
+    "failed_cases": 0,
+    "payload_variant": "P2_id_plus_compact_capsule_64",
+    "mean_bit_accuracy": 0.9996875,
+    "mean_payload_recovery_accuracy": 0.984,
+    "mean_capsule_recovery_accuracy": 0.9997,
+    "mean_auth_success": 0.984
+  },
+  "localization": {
+    "iou": 0.9573244668616256,
+    "dice": 0.9778285735841605,
+    "precision": 0.9605053632820596,
+    "recall": 0.9965887139596729,
+    "mae": 0.006301502227783203
+  },
+  "report_quality": {
+    "unknown_before_stage8e": 0.7790603716957174,
+    "unknown_after_stage8e": 0.44226403478394705,
+    "f3_unknown_rate": 0.23141749536490813,
+    "f3_reports": 5933,
+    "f3_reports_per_image": 5.933,
+    "f3_gt_coverage_retained": 0.9965887139596729,
+    "f3_predicted_area_retained": 1.0,
+    "f3_no_report_images": 0
+  },
+  "by_attack_type": [
+    {
+      "attack_type": "object_removal",
+      "sample_count": 250,
+      "iou": 0.9582643886524301,
+      "dice": 0.9782132696514875,
+      "payload_recovery": 0.98,
+      "auth_success": 0.98,
+      "bit_accuracy": 0.999625,
+      "capsule_recovery": 0.9997,
+      "f3_unknown_rate": 0.23776483516483515,
+      "f3_reports_per_image": 5.728,
+      "gt_coverage_retained": 0.9969548670451995,
+      "predicted_area_retained": 1.0,
+      "no_report_images": 0
+    },
+    {
+      "attack_type": "inpainting",
+      "sample_count": 250,
+      "iou": 0.9563733892446082,
+      "dice": 0.9774405443719563,
+      "payload_recovery": 0.996,
+      "auth_success": 0.996,
+      "bit_accuracy": 0.999875,
+      "capsule_recovery": 0.9999,
+      "f3_unknown_rate": 0.2250056055056055,
+      "f3_reports_per_image": 6.168,
+      "gt_coverage_retained": 0.9963829971647082,
+      "predicted_area_retained": 1.0,
+      "no_report_images": 0
+    },
+    {
+      "attack_type": "local_replacement",
+      "sample_count": 250,
+      "iou": 0.9584663060091503,
+      "dice": 0.978317979633065,
+      "payload_recovery": 0.976,
+      "auth_success": 0.976,
+      "bit_accuracy": 0.9995625,
+      "capsule_recovery": 0.9996,
+      "f3_unknown_rate": 0.24715264735264733,
+      "f3_reports_per_image": 5.764,
+      "gt_coverage_retained": 0.9968771256769379,
+      "predicted_area_retained": 1.0,
+      "no_report_images": 0
+    },
+    {
+      "attack_type": "local_style_edit",
+      "sample_count": 250,
+      "iou": 0.9561937835403138,
+      "dice": 0.9773425006801327,
+      "payload_recovery": 0.984,
+      "auth_success": 0.984,
+      "bit_accuracy": 0.9996875,
+      "capsule_recovery": 0.9996,
+      "f3_unknown_rate": 0.21034423354423354,
+      "f3_reports_per_image": 6.072,
+      "gt_coverage_retained": 0.9961398659518457,
+      "predicted_area_retained": 1.0,
+      "no_report_images": 0
+    }
+  ],
+  "run_records": [
+    {
+      "stage": "stage8d_dual_branch_report",
+      "returncode": 0,
+      "runtime_seconds": 129.4588384628296,
+      "stdout_log": "/data/watermark_exps/dfg_locguard/outputs/stage10a_lc_scale1000_eval/logs/stage8d_dual_branch_report.stdout.log",
+      "stderr_log": "/data/watermark_exps/dfg_locguard/outputs/stage10a_lc_scale1000_eval/logs/stage8d_dual_branch_report.stderr.log",
+      "command": [
+        "/root/miniconda3/bin/python",
+        "/root/autodl-tmp/watermark_exps/dfg_locguard/scripts/run_stage8d_end_to_end_dual_branch_report.py",
+        "--project_root",
+        "/root/autodl-tmp/watermark_exps",
+        "--stage1_dir",
+        "/data/watermark_exps/dfg_locguard/outputs/stage10a_lc_scale1000_eval/stage10a_stage1_like_inputs",
+        "--stage8c_dir",
+        "/data/watermark_exps/dfg_locguard/outputs/stage10a_lc_scale1000_eval/stage8c_real_payload_recovery",
+        "--output_dir",
+        "/data/watermark_exps/dfg_locguard/outputs/stage10a_lc_scale1000_eval/stage8d",
+        "--max_samples",
+        "1000",
+        "--mask_threshold",
+        "127",
+        "--contact_sheet_samples",
+        "50",
+        "--overwrite"
+      ]
+    },
+    {
+      "stage": "stage8e_report_quality_audit",
+      "returncode": 0,
+      "runtime_seconds": 21.423063039779663,
+      "stdout_log": "/data/watermark_exps/dfg_locguard/outputs/stage10a_lc_scale1000_eval/logs/stage8e_report_quality_audit.stdout.log",
+      "stderr_log": "/data/watermark_exps/dfg_locguard/outputs/stage10a_lc_scale1000_eval/logs/stage8e_report_quality_audit.stderr.log",
+      "command": [
+        "/root/miniconda3/bin/python",
+        "/root/autodl-tmp/watermark_exps/dfg_locguard/scripts/run_stage8e_report_quality_audit.py",
+        "--project_root",
+        "/root/autodl-tmp/watermark_exps",
+        "--stage8d_dir",
+        "/data/watermark_exps/dfg_locguard/outputs/stage10a_lc_scale1000_eval/stage8d",
+        "--stage1_dir",
+        "/data/watermark_exps/dfg_locguard/outputs/stage10a_lc_scale1000_eval/stage10a_stage1_like_inputs",
+        "--output_dir",
+        "/data/watermark_exps/dfg_locguard/outputs/stage10a_lc_scale1000_eval/stage8e",
+        "--max_samples",
+        "1000",
+        "--contact_sheet_samples",
+        "50",
+        "--overwrite"
+      ]
+    },
+    {
+      "stage": "stage8f_report_region_aggregation",
+      "returncode": 0,
+      "runtime_seconds": 307.48022270202637,
+      "stdout_log": "/data/watermark_exps/dfg_locguard/outputs/stage10a_lc_scale1000_eval/logs/stage8f_report_region_aggregation.stdout.log",
+      "stderr_log": "/data/watermark_exps/dfg_locguard/outputs/stage10a_lc_scale1000_eval/logs/stage8f_report_region_aggregation.stderr.log",
+      "command": [
+        "/root/miniconda3/bin/python",
+        "/root/autodl-tmp/watermark_exps/dfg_locguard/scripts/run_stage8f_report_region_aggregation.py",
+        "--project_root",
+        "/root/autodl-tmp/watermark_exps",
+        "--stage8e_dir",
+        "/data/watermark_exps/dfg_locguard/outputs/stage10a_lc_scale1000_eval/stage8e",
+        "--stage1_dir",
+        "/data/watermark_exps/dfg_locguard/outputs/stage10a_lc_scale1000_eval/stage10a_stage1_like_inputs",
+        "--output_dir",
+        "/data/watermark_exps/dfg_locguard/outputs/stage10a_lc_scale1000_eval/stage8f",
+        "--max_samples",
+        "1000",
+        "--mask_threshold",
+        "127",
+        "--contact_sheet_samples",
+        "50",
+        "--overwrite"
+      ]
+    }
+  ],
+  "constraints": {
+    "no_training": true,
+    "no_vlm": true,
+    "no_128bit_payload": true,
+    "watermark_embedding_modified": false,
+    "verification_original_access": false,
+    "gt_mask_usage": [
+      "evaluation_only"
+    ]
+  },
+  "stage8f_best_by_selection_report_quality": {
+    "unknown_before_stage8e": 0.7790603716957174,
+    "unknown_after_stage8e": 0.44226403478394705,
+    "f3_unknown_rate": 0.037588097102584185,
+    "f3_reports_per_image": 1.277,
+    "f3_gt_coverage_retained": 0.9963405042140087,
+    "f3_predicted_area_retained": 0.9977487378836479,
+    "f3_no_report_images": 0
+  },
+  "stage8f_main_strategy": "F3_merge_nearby_fragments"
+}

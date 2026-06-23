@@ -1,0 +1,5 @@
+bucket,total_regions,unknown_regions,unknown_rate
+inpainting,1542,351,0.22762645914396887
+local_replacement,1441,351,0.24358084663428176
+local_style_edit,1518,332,0.21870882740447958
+object_removal,1432,339,0.236731843575419

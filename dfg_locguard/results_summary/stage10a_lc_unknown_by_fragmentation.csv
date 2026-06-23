@@ -1,0 +1,4 @@
+bucket,images,total_regions,unknown_regions,unknown_rate
+high_fragmentation,103,849,158,0.18610129564193167
+low_fragmentation,393,1696,496,0.29245283018867924
+medium_fragmentation,504,3388,719,0.21221959858323494
