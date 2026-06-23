@@ -1,0 +1,376 @@
+{
+  "payload_failed_count": 11,
+  "auth_failed_count": 11,
+  "capsule_failed_count": 8,
+  "bit_failed_count": 11,
+  "failed_sample_ids": [
+    "0070",
+    "0106",
+    "0116",
+    "0327",
+    "0499",
+    "0517",
+    "0650",
+    "0673",
+    "0681",
+    "0741",
+    "0759"
+  ],
+  "failure_details": [
+    {
+      "image_id": "0070",
+      "status": "ok",
+      "bit_accuracy": 0.921875,
+      "ber": 0.078125,
+      "payload_recovery_accuracy": 0.0,
+      "semantic_capsule_recovery_accuracy": 0.9,
+      "auth_check_success": 0.0,
+      "iou": 0.8439109521985272,
+      "dice": 0.9153489231053349,
+      "num_pred_regions": 59.0,
+      "fragmentation_ratio": 59.0,
+      "small_pred_region_ratio": 0.9830508474576272,
+      "tiny_pred_region_ratio": 0.9661016949152542,
+      "semantic_compactness": 0.9907407407407407
+    },
+    {
+      "image_id": "0106",
+      "status": "ok",
+      "bit_accuracy": 0.953125,
+      "ber": 0.046875,
+      "payload_recovery_accuracy": 0.0,
+      "semantic_capsule_recovery_accuracy": 0.925,
+      "auth_check_success": 0.0,
+      "iou": 0.9488946391404623,
+      "dice": 0.9737772582297846,
+      "num_pred_regions": 33.0,
+      "fragmentation_ratio": 33.0,
+      "small_pred_region_ratio": 0.9393939393939394,
+      "tiny_pred_region_ratio": 0.8787878787878788,
+      "semantic_compactness": 0.9916638118076967
+    },
+    {
+      "image_id": "0116",
+      "status": "ok",
+      "bit_accuracy": 0.96875,
+      "ber": 0.03125,
+      "payload_recovery_accuracy": 0.0,
+      "semantic_capsule_recovery_accuracy": 0.95,
+      "auth_check_success": 0.0,
+      "iou": 0.932572394842528,
+      "dice": 0.9651099201574975,
+      "num_pred_regions": 82.0,
+      "fragmentation_ratio": 11.714285714285714,
+      "small_pred_region_ratio": 0.9512195121951219,
+      "tiny_pred_region_ratio": 0.9146341463414634,
+      "semantic_compactness": 0.9810502455610125
+    },
+    {
+      "image_id": "0327",
+      "status": "ok",
+      "bit_accuracy": 0.984375,
+      "ber": 0.015625,
+      "payload_recovery_accuracy": 0.0,
+      "semantic_capsule_recovery_accuracy": 0.975,
+      "auth_check_success": 0.0,
+      "iou": 0.929676046346654,
+      "dice": 0.9635566012303017,
+      "num_pred_regions": 71.0,
+      "fragmentation_ratio": 71.0,
+      "small_pred_region_ratio": 0.971830985915493,
+      "tiny_pred_region_ratio": 0.971830985915493,
+      "semantic_compactness": 0.9816776409962783
+    },
+    {
+      "image_id": "0499",
+      "status": "ok",
+      "bit_accuracy": 0.984375,
+      "ber": 0.015625,
+      "payload_recovery_accuracy": 0.0,
+      "semantic_capsule_recovery_accuracy": 0.975,
+      "auth_check_success": 0.0,
+      "iou": 0.9650701690243834,
+      "dice": 0.9822246393405084,
+      "num_pred_regions": 23.0,
+      "fragmentation_ratio": 23.0,
+      "small_pred_region_ratio": 0.9565217391304348,
+      "tiny_pred_region_ratio": 0.9565217391304348,
+      "semantic_compactness": 0.9979080089333673
+    },
+    {
+      "image_id": "0517",
+      "status": "ok",
+      "bit_accuracy": 0.984375,
+      "ber": 0.015625,
+      "payload_recovery_accuracy": 0.0,
+      "semantic_capsule_recovery_accuracy": 1.0,
+      "auth_check_success": 0.0,
+      "iou": 0.9394479073909172,
+      "dice": 0.9687786960514233,
+      "num_pred_regions": 40.0,
+      "fragmentation_ratio": 6.666666666666667,
+      "small_pred_region_ratio": 0.875,
+      "tiny_pred_region_ratio": 0.85,
+      "semantic_compactness": 0.5055360564287773
+    },
+    {
+      "image_id": "0650",
+      "status": "ok",
+      "bit_accuracy": 0.984375,
+      "ber": 0.015625,
+      "payload_recovery_accuracy": 0.0,
+      "semantic_capsule_recovery_accuracy": 0.975,
+      "auth_check_success": 0.0,
+      "iou": 0.8378398820103619,
+      "dice": 0.9117659162928515,
+      "num_pred_regions": 46.0,
+      "fragmentation_ratio": 11.5,
+      "small_pred_region_ratio": 0.9347826086956522,
+      "tiny_pred_region_ratio": 0.8913043478260869,
+      "semantic_compactness": 0.9371036573206237
+    },
+    {
+      "image_id": "0673",
+      "status": "ok",
+      "bit_accuracy": 0.984375,
+      "ber": 0.015625,
+      "payload_recovery_accuracy": 0.0,
+      "semantic_capsule_recovery_accuracy": 1.0,
+      "auth_check_success": 0.0,
+      "iou": 0.7723975891306568,
+      "dice": 0.8715850144092219,
+      "num_pred_regions": 34.0,
+      "fragmentation_ratio": 8.5,
+      "small_pred_region_ratio": 0.8823529411764706,
+      "tiny_pred_region_ratio": 0.8823529411764706,
+      "semantic_compactness": 0.5646385741005611
+    },
+    {
+      "image_id": "0681",
+      "status": "ok",
+      "bit_accuracy": 0.984375,
+      "ber": 0.015625,
+      "payload_recovery_accuracy": 0.0,
+      "semantic_capsule_recovery_accuracy": 0.975,
+      "auth_check_success": 0.0,
+      "iou": 0.9367668586855263,
+      "dice": 0.9673511858017905,
+      "num_pred_regions": 38.0,
+      "fragmentation_ratio": 38.0,
+      "small_pred_region_ratio": 0.9210526315789473,
+      "tiny_pred_region_ratio": 0.9210526315789473,
+      "semantic_compactness": 0.9895460431106711
+    },
+    {
+      "image_id": "0741",
+      "status": "ok",
+      "bit_accuracy": 0.984375,
+      "ber": 0.015625,
+      "payload_recovery_accuracy": 0.0,
+      "semantic_capsule_recovery_accuracy": 0.975,
+      "auth_check_success": 0.0,
+      "iou": 0.8767497162622278,
+      "dice": 0.9343277994557314,
+      "num_pred_regions": 33.0,
+      "fragmentation_ratio": 33.0,
+      "small_pred_region_ratio": 0.9393939393939394,
+      "tiny_pred_region_ratio": 0.8787878787878788,
+      "semantic_compactness": 0.9852913085004775
+    },
+    {
+      "image_id": "0759",
+      "status": "ok",
+      "bit_accuracy": 0.984375,
+      "ber": 0.015625,
+      "payload_recovery_accuracy": 0.0,
+      "semantic_capsule_recovery_accuracy": 1.0,
+      "auth_check_success": 0.0,
+      "iou": 0.9762289741052682,
+      "dice": 0.9879715224266996,
+      "num_pred_regions": 8.0,
+      "fragmentation_ratio": 4.0,
+      "small_pred_region_ratio": 0.875,
+      "tiny_pred_region_ratio": 0.875,
+      "semantic_compactness": 0.9997579923041553
+    }
+  ],
+  "failure_metrics_summary": {
+    "count": 11,
+    "iou": {
+      "mean": 0.9054141026488648,
+      "median": 0.932572394842528,
+      "min": 0.7723975891306568,
+      "max": 0.9762289741052682
+    },
+    "dice": {
+      "mean": 0.9492543160455587,
+      "median": 0.9651099201574975,
+      "min": 0.8715850144092219,
+      "max": 0.9879715224266996
+    },
+    "bit_accuracy": {
+      "mean": 0.9744318181818182,
+      "median": 0.984375,
+      "min": 0.921875,
+      "max": 0.984375
+    },
+    "payload_recovery_accuracy": {
+      "mean": 0.0,
+      "median": 0.0,
+      "min": 0.0,
+      "max": 0.0
+    },
+    "semantic_capsule_recovery_accuracy": {
+      "mean": 0.9681818181818181,
+      "median": 0.975,
+      "min": 0.9,
+      "max": 1.0
+    },
+    "auth_check_success": {
+      "mean": 0.0,
+      "median": 0.0,
+      "min": 0.0,
+      "max": 0.0
+    },
+    "num_pred_regions": {
+      "mean": 42.45454545454545,
+      "median": 38.0,
+      "min": 8.0,
+      "max": 82.0
+    },
+    "fragmentation_ratio": {
+      "mean": 27.216450216450216,
+      "median": 23.0,
+      "min": 4.0,
+      "max": 71.0
+    },
+    "small_pred_region_ratio": {
+      "mean": 0.9299635586306932,
+      "median": 0.9393939393939394,
+      "min": 0.875,
+      "max": 0.9830508474576272
+    },
+    "tiny_pred_region_ratio": {
+      "mean": 0.9078522040418098,
+      "median": 0.8913043478260869,
+      "min": 0.85,
+      "max": 0.971830985915493
+    },
+    "semantic_compactness": {
+      "mean": 0.902264916345851,
+      "median": 0.9852913085004775,
+      "min": 0.5055360564287773,
+      "max": 0.9997579923041553
+    },
+    "mae": {
+      "mean": 0.010983207009055397,
+      "median": 0.01268768310546875,
+      "min": 0.003757476806640625,
+      "max": 0.017398834228515625
+    },
+    "precision": {
+      "mean": 0.925009499392498,
+      "median": 0.9379711804561504,
+      "min": 0.8318846957861151,
+      "max": 0.9789695312310932
+    },
+    "recall": {
+      "mean": 0.9752259716614377,
+      "median": 0.9903997732787786,
+      "min": 0.9152644958237501,
+      "max": 0.9990457243599075
+    }
+  },
+  "successful_metrics_summary": {
+    "count": 989,
+    "iou": {
+      "mean": 0.8927086458124541,
+      "median": 0.9182560015181706,
+      "min": 0.02127659574468085,
+      "max": 0.9835980691820748
+    },
+    "dice": {
+      "mean": 0.9397118102912464,
+      "median": 0.957386293374224,
+      "min": 0.041666666666666664,
+      "max": 0.9917312226338835
+    },
+    "bit_accuracy": {
+      "mean": 1.0,
+      "median": 1.0,
+      "min": 1.0,
+      "max": 1.0
+    },
+    "payload_recovery_accuracy": {
+      "mean": 1.0,
+      "median": 1.0,
+      "min": 1.0,
+      "max": 1.0
+    },
+    "semantic_capsule_recovery_accuracy": {
+      "mean": 1.0,
+      "median": 1.0,
+      "min": 1.0,
+      "max": 1.0
+    },
+    "auth_check_success": {
+      "mean": 1.0,
+      "median": 1.0,
+      "min": 1.0,
+      "max": 1.0
+    },
+    "num_pred_regions": {
+      "mean": 32.22042467138524,
+      "median": 20.0,
+      "min": 2.0,
+      "max": 859.0
+    },
+    "fragmentation_ratio": {
+      "mean": 21.157199371766968,
+      "median": 10.0,
+      "min": 1.0,
+      "max": 714.0
+    },
+    "small_pred_region_ratio": {
+      "mean": 0.9117210831600032,
+      "median": 0.9333333333333333,
+      "min": 0.5,
+      "max": 1.0
+    },
+    "tiny_pred_region_ratio": {
+      "mean": 0.8886909536507539,
+      "median": 0.9090909090909091,
+      "min": 0.0,
+      "max": 1.0
+    },
+    "semantic_compactness": {
+      "mean": 0.9500293282487261,
+      "median": 0.9966578112948838,
+      "min": 0.18341412288746234,
+      "max": 0.999967872518152
+    },
+    "mae": {
+      "mean": 0.00956869945005411,
+      "median": 0.00804901123046875,
+      "min": 0.0003509521484375,
+      "max": 0.09574508666992188
+    },
+    "precision": {
+      "mean": 0.9207102626490886,
+      "median": 0.9340395161896176,
+      "min": 0.17162629757785466,
+      "max": 0.999540769466272
+    },
+    "recall": {
+      "mean": 0.9643091040469812,
+      "median": 0.986374450291976,
+      "min": 0.021505376344086023,
+      "max": 1.0
+    }
+  },
+  "diagnostic_flags": [
+    "failed samples have higher fragmentation than typical successful samples",
+    "failed samples have higher predicted region count than typical successful samples"
+  ],
+  "note": "Failures are computed on Stage 8C P2_id_plus_compact_capsule_64 rows using <0.999 exact/near-exact recovery thresholds or non-ok status."
+}
