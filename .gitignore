@@ -13,6 +13,7 @@ results/
 *.tar
 *.tar.gz
 __pycache__/
+**/__pycache__/
 *.pyc
 .venv/
 venv/
