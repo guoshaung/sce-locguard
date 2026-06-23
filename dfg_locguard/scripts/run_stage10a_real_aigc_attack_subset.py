@@ -78,15 +78,21 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--project_root", default=str(Path(__file__).resolve().parents[2]))
     parser.add_argument("--stage9_dir", default="dfg_locguard/outputs/stage9_full_evaluation_1000")
     parser.add_argument("--output_dir", default="dfg_locguard/outputs/stage10a_real_aigc_attack_subset")
+    parser.add_argument("--output_root", default="", help="Alias for --output_dir.")
     parser.add_argument("--mode", choices=["smoke", "full", "manifest_only"], default="smoke")
     parser.add_argument("--samples_per_type", type=int, default=50)
     parser.add_argument("--smoke_per_type", type=int, default=2)
+    parser.add_argument("--num_smoke", type=int, default=0, help="Total smoke cases; split evenly across 4 attack types.")
     parser.add_argument("--seed", type=int, default=20260623)
     parser.add_argument("--ckpt", default="checkpoints/clean.pth")
     parser.add_argument("--opt", default="code/options/test_editguard.yml")
     parser.add_argument("--generator", choices=["diffusers_inpaint", "opencv_proxy"], default="diffusers_inpaint")
     parser.add_argument("--model_id", default="runwayml/stable-diffusion-inpainting")
     parser.add_argument("--model_cache_dir", default="models/hf_cache")
+    parser.add_argument("--hf_cache_dir", default="", help="Alias for --model_cache_dir.")
+    parser.add_argument("--device", default="cuda", choices=["cuda", "cpu"])
+    parser.add_argument("--dtype", default="fp16", choices=["fp16", "fp32"])
+    parser.add_argument("--batch_size", type=int, default=1, help="Reserved for future batching; current smoke generation uses 1.")
     parser.add_argument("--allow_model_download", action="store_true")
     parser.add_argument("--num_inference_steps", type=int, default=30)
     parser.add_argument("--guidance_scale", type=float, default=7.5)
@@ -242,7 +248,8 @@ def load_diffusers_pipe(args: argparse.Namespace, project_root: Path):
 
     cache_dir = resolve(project_root, args.model_cache_dir)
     cache_dir.mkdir(parents=True, exist_ok=True)
-    dtype = torch.float16 if torch.cuda.is_available() else torch.float32
+    use_cuda = args.device == "cuda" and torch.cuda.is_available()
+    dtype = torch.float16 if args.dtype == "fp16" and use_cuda else torch.float32
     pipe = StableDiffusionInpaintPipeline.from_pretrained(
         args.model_id,
         torch_dtype=dtype,
@@ -250,7 +257,7 @@ def load_diffusers_pipe(args: argparse.Namespace, project_root: Path):
         safety_checker=None,
         requires_safety_checker=False,
     )
-    if torch.cuda.is_available():
+    if use_cuda:
         pipe = pipe.to("cuda")
     pipe.set_progress_bar_config(disable=True)
     return pipe
@@ -319,6 +326,12 @@ def save_contact_sheet(case_dirs: list[Path], out_path: Path, max_items: int = 5
 
 def main() -> None:
     args = parse_args()
+    if args.output_root:
+        args.output_dir = args.output_root
+    if args.hf_cache_dir:
+        args.model_cache_dir = args.hf_cache_dir
+    if args.num_smoke:
+        args.smoke_per_type = max(1, args.num_smoke // len(ATTACK_TYPES))
     project_root = Path(args.project_root).resolve()
     stage9_dir = resolve(project_root, args.stage9_dir)
     output_dir = resolve(project_root, args.output_dir)
