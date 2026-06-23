@@ -1,0 +1,106 @@
+{
+  "stage": "stage10b_editguard_baseline_extraction",
+  "completed": true,
+  "project_root": "/root/autodl-tmp/watermark_exps",
+  "output_dir": "/root/autodl-tmp/watermark_exps/dfg_locguard/outputs/stage10b_editguard_baseline_extraction",
+  "git_commit": "0c09f46f069943bff61546ca7ff68bd1c4333c9e",
+  "constraints": {
+    "no_training": true,
+    "no_vlm": true,
+    "no_128bit_payload": true,
+    "watermark_embedding_modified": false,
+    "robust_payload_bits": 64,
+    "previous_outputs_modified": false
+  },
+  "editguard_style_baseline": [
+    {
+      "setting": "synthetic_local_tamper_1000",
+      "setting_display_name": "Synthetic local tamper 1000",
+      "sample_count": 1000,
+      "iou": 0.8928331973424927,
+      "dice": 0.9398208447718827,
+      "precision": 0.9210072993936756,
+      "recall": 0.9645169727738201,
+      "mae": 0.00957241439819336,
+      "bit_accuracy": 0.99971875,
+      "payload_or_copyright_recovery": 0.989,
+      "auth_success": 0.989,
+      "failed_samples": 0,
+      "predicted_mask_area_ratio": null,
+      "gt_coverage": 0.9645169727738201,
+      "source_per_sample": "/root/autodl-tmp/watermark_exps/dfg_locguard/outputs/stage9_full_evaluation_1000/stage8d/per_sample_stage8d_summary.csv",
+      "source_summary": "/root/autodl-tmp/watermark_exps/dfg_locguard/outputs/stage9_full_evaluation_1000/stage9_1000_key_metrics.json",
+      "notes": "Pure EditGuard-style baseline: fragile localization plus robust 64-bit payload/copyright recovery only; excludes semantic capsule interpretation and Stage8E/Stage8F reports."
+    },
+    {
+      "setting": "localized_composited_aigc_local_edit_1000",
+      "setting_display_name": "Localized-composited AIGC local edit 1000",
+      "sample_count": 1000,
+      "iou": 0.9573244668616256,
+      "dice": 0.9778285735841604,
+      "precision": 0.9605053632820596,
+      "recall": 0.9965887139596729,
+      "mae": 0.006301502227783203,
+      "bit_accuracy": 0.9996875,
+      "payload_or_copyright_recovery": 0.984,
+      "auth_success": 0.984,
+      "failed_samples": 0,
+      "predicted_mask_area_ratio": null,
+      "gt_coverage": 0.9965887139596729,
+      "source_per_sample": "/root/autodl-tmp/watermark_exps/dfg_locguard/outputs/stage10a_lc_scale1000_eval/stage8d/per_sample_stage8d_summary.csv",
+      "source_summary": "/root/autodl-tmp/watermark_exps/dfg_locguard/outputs/stage10a_lc_scale1000_eval/stage10a_lc1000_eval_summary.json",
+      "notes": "Pure EditGuard-style baseline: fragile localization plus robust 64-bit payload/copyright recovery only; excludes semantic capsule interpretation and Stage8E/Stage8F reports."
+    },
+    {
+      "setting": "unconstrained_diffusion_rerendering_200",
+      "setting_display_name": "Unconstrained diffusion re-rendering 200",
+      "sample_count": 200,
+      "iou": 0.13359886169433594,
+      "dice": 0.23037736446106755,
+      "precision": 0.13359886169433594,
+      "recall": 1.0,
+      "mae": 0.866401138305664,
+      "bit_accuracy": 0.50578125,
+      "payload_or_copyright_recovery": 0.0,
+      "auth_success": 0.0,
+      "failed_samples": 0,
+      "predicted_mask_area_ratio": null,
+      "gt_coverage": 1.0,
+      "source_per_sample": "/root/autodl-tmp/watermark_exps/dfg_locguard/outputs/stage10a_real_aigc_attack_eval/stage8d/per_sample_stage8d_summary.csv",
+      "source_summary": "/root/autodl-tmp/watermark_exps/dfg_locguard/outputs/stage10a_real_aigc_attack_eval/stage10a_eval_summary.json",
+      "notes": "Pure EditGuard-style baseline: fragile localization plus robust 64-bit payload/copyright recovery only; excludes semantic capsule interpretation and Stage8E/Stage8F reports."
+    }
+  ],
+  "source_outputs": {
+    "synthetic_local_tamper_1000": {
+      "summary_path": "/root/autodl-tmp/watermark_exps/dfg_locguard/outputs/stage9_full_evaluation_1000/stage9_1000_key_metrics.json",
+      "strategy_path": "/root/autodl-tmp/watermark_exps/dfg_locguard/outputs/stage9_full_evaluation_1000/stage9_1000_strategy_comparison.csv",
+      "per_sample_path": "/root/autodl-tmp/watermark_exps/dfg_locguard/outputs/stage9_full_evaluation_1000/stage8d/per_sample_stage8d_summary.csv"
+    },
+    "localized_composited_aigc_local_edit_1000": {
+      "summary_path": "/root/autodl-tmp/watermark_exps/dfg_locguard/outputs/stage10a_lc_scale1000_eval/stage10a_lc1000_eval_summary.json",
+      "strategy_path": "/root/autodl-tmp/watermark_exps/dfg_locguard/outputs/stage10a_lc_scale1000_eval/stage10a_lc1000_strategy_comparison.csv",
+      "per_sample_path": "/root/autodl-tmp/watermark_exps/dfg_locguard/outputs/stage10a_lc_scale1000_eval/stage8d/per_sample_stage8d_summary.csv"
+    },
+    "unconstrained_diffusion_rerendering_200": {
+      "summary_path": "/root/autodl-tmp/watermark_exps/dfg_locguard/outputs/stage10a_real_aigc_attack_eval/stage10a_eval_summary.json",
+      "strategy_path": "/root/autodl-tmp/watermark_exps/dfg_locguard/outputs/stage10a_real_aigc_attack_eval/stage10a_strategy_comparison.csv",
+      "per_sample_path": "/root/autodl-tmp/watermark_exps/dfg_locguard/outputs/stage10a_real_aigc_attack_eval/stage8d/per_sample_stage8d_summary.csv"
+    }
+  },
+  "external_baseline_feasibility": {
+    "omniguard": {
+      "status": "feasibility_pending",
+      "repo_url": "https://github.com/xuanyuzhang21/OmniGuard",
+      "checkpoint_required": true,
+      "training_required_for_inference_reproduction": false,
+      "notes": "Light inspection shows README checkpoint links and environment.yml; complete training/testing process is still noted as forthcoming."
+    },
+    "dual_guard": {
+      "status": "conceptual_related_method",
+      "repo_url": null,
+      "checkpoint_required": "unknown",
+      "notes": "No official runnable code/checkpoint confirmed in this stage."
+    }
+  }
+}

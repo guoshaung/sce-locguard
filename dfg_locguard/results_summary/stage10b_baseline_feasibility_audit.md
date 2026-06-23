@@ -70,6 +70,12 @@ Public resources currently identified:
 - Checkpoint download entries are listed in the README:
   - PKU Disk checkpoint zip
   - Google Drive checkpoint zip
+- Light repo inspection status:
+  - `git ls-remote https://github.com/xuanyuzhang21/OmniGuard.git HEAD` succeeds.
+  - Shallow clone exposes `README.md`, `app.py`, `demo.py`, `test.py`, model files, `environment.yml`, and `omniguard_cop/requirements.txt`.
+  - `environment.yml` is an older Python/PyTorch-style environment with CUDA 10 era dependencies.
+  - `omniguard_cop/requirements.txt` lists `torch`, `torchvision`, `timm`, `kornia`, `tqdm`, `focal_frequency_loss`, `accelerate`, and `diffusers`.
+  - No explicit `LICENSE` file was visible in the shallow inspection, so paper/baseline use requires manual license clarification.
 
 Feasibility risks before running:
 
@@ -78,11 +84,13 @@ Feasibility risks before running:
 | repo URL | available |
 | checkpoint availability | appears available, but size should be checked before download |
 | checkpoint size | unknown until confirmed; do not download without user confirmation |
-| dependencies | likely PyTorch/diffusion/image-processing stack; exact environment must be read from repo |
+| dependencies | visible via `environment.yml` and `omniguard_cop/requirements.txt`; likely needs compatibility adjustment on the RTX 4090 server |
 | expected disk | unknown; reserve several GB for checkpoint and generated outputs |
 | expected runtime | unknown; likely manageable for inference on RTX 4090 after setup |
-| license | must be checked from repository before paper use; do not assume permission beyond public availability |
+| license | no explicit license observed in shallow inspection; must clarify before paper use |
 | reproducibility | partial risk because README says complete training/testing process is still being released |
+| training required | not required if provided checkpoints are used for inference reproduction |
+| inference-only reproduction | plausible, but should be tested only after user confirms checkpoint download |
 
 Do not download OmniGuard checkpoint until the user confirms. First Stage 10B action should be a lightweight repository inspection and environment estimate.
 
@@ -93,6 +101,8 @@ Dual-Guard is best treated as threat-model inspiration unless runnable code/chec
 - global provenance anchor
 - local content anchor
 - separate evaluation for regeneration, reprompting, diffusion editing, and local tampering
+- current status: no official runnable repository/checkpoint has been confirmed in this project state
+- recommended use: cite as conceptual related method and threat-model/evaluation taxonomy reference, not as a numeric baseline unless official resources become available
 
 If no official code/checkpoint is available, Stage 10B should include a conceptual comparison row rather than a numeric baseline.
 
@@ -136,4 +146,4 @@ Stage 10B should compare methods under three attack settings:
 
 ## Current Recommendation
 
-Proceed to Stage 10B baseline comparison only after the localized-composite full 200 result is confirmed successful. Treat unconstrained diffusion full 200 as a watermark-laundering stress test, not as the fair local AIGC edit benchmark.
+Proceed with pure EditGuard-style baseline extraction first. Do not download OmniGuard checkpoint until the user confirms. Treat unconstrained diffusion full 200 as a watermark-laundering stress test, not as the fair local AIGC edit benchmark.
