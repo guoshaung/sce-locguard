@@ -440,14 +440,17 @@ def main() -> None:
     save_contact_sheet(generated_dirs, run_dir / "stage10a_generation_contact_sheet.png")
     total_runtime = time.time() - start_all
     ok_rows = [row for row in manifest_rows if row["generation_status"] == "ok"]
+    planned_rows = [row for row in manifest_rows if row["generation_status"] == "planned"]
+    failed_rows = [row for row in manifest_rows if row["generation_status"] == "failed"]
     summary = {
         "stage": "stage10a_real_aigc_attack_subset_generation",
         "mode": args.mode,
         "generator": args.generator,
         "model_id": args.model_id if args.generator == "diffusers_inpaint" else "opencv_proxy_debug",
         "total_cases": len(manifest_rows),
+        "planned_cases": len(planned_rows),
         "generated_cases": len(ok_rows),
-        "failed_cases": len(manifest_rows) - len(ok_rows),
+        "failed_cases": len(failed_rows),
         "generation_success_rate": len(ok_rows) / len(manifest_rows) if manifest_rows else 0.0,
         "samples_by_attack_type": {attack_type: sum(1 for row in ok_rows if row["attack_type"] == attack_type) for attack_type in ATTACK_TYPES},
         "total_runtime_seconds": total_runtime,
