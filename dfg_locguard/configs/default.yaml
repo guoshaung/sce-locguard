@@ -1,0 +1,25 @@
+region_proposal:
+  mode: connected_components
+  min_area: 32
+  grid_size: 4
+  sam_checkpoint:
+  sam_model_type: vit_b
+
+tsa:
+  tamper_ratio_weight: 0.55
+  region_iou_weight: 0.30
+  confidence_weight: 0.15
+  select_threshold: 0.05
+
+scc:
+  feature_method: fallback
+  clip_model: openai/clip-vit-base-patch32
+  crop_padding: 8
+
+sse:
+  low_threshold: 25
+  medium_threshold: 50
+  high_threshold: 75
+
+visualization:
+  alpha: 0.45

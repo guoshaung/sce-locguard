@@ -1,0 +1,62 @@
+{
+  "stage": "stage8e_report_quality_audit",
+  "input_stage8d_summary": {
+    "evaluated_samples": 50,
+    "total_region_reports": 983,
+    "unknown_change_type_rate": 0.44675427841726273
+  },
+  "total_region_reports": 983,
+  "valid_report_count": 983,
+  "unknown_change_type_count_original": 431,
+  "unknown_change_type_rate_original": 0.43845371312309256,
+  "unknown_change_type_count_improved": 230,
+  "unknown_change_type_rate_improved": 0.23397761953204477,
+  "unknown_rate_reduction_abs": 0.2044760935910478,
+  "unknown_rate_reduction_relative": 0.46635730858468677,
+  "change_type_distribution_original": {
+    "object_change": 23,
+    "color_change": 272,
+    "unknown": 431,
+    "attribute_change": 168,
+    "risk_region_change": 63,
+    "texture_change": 26
+  },
+  "change_type_distribution_improved": {
+    "color_change": 413,
+    "unknown": 230,
+    "texture_change": 287,
+    "structure_change": 53
+  },
+  "severity_distribution": {
+    "medium": 590,
+    "low": 330,
+    "high": 63
+  },
+  "confidence_distribution": {
+    "high": 559,
+    "medium": 424
+  },
+  "auth_valid_rate": 1.0,
+  "capsule_valid_rate": 1.0,
+  "copyright_valid_rate": 1.0,
+  "report_coverage_rate": 1.0,
+  "auth_success": 1.0,
+  "capsule_validity": 1.0,
+  "max_samples": 50,
+  "use_vlm": false,
+  "verification_original_access": false,
+  "gt_mask_usage": [
+    "evaluation_only"
+  ],
+  "robust_payload_bits": 64,
+  "no_128bit_payload_attempt": true,
+  "unknown_case_gallery": {
+    "gallery_path": "D:\\pycharm\\watermark_exps\\dfg_locguard\\outputs\\stage8e_report_quality_audit\\unknown_case_gallery\\unknown_case_gallery_contact_sheet.png",
+    "items": 80
+  },
+  "contact_sheet": {
+    "path": "D:\\pycharm\\watermark_exps\\dfg_locguard\\outputs\\stage8e_report_quality_audit\\stage8e_contact_sheet.png",
+    "sampling": "even",
+    "shown_samples": 50
+  }
+}
