@@ -1,0 +1,82 @@
+{
+  "stage": "stage10a_attack_locality_audit",
+  "total_attacks": 200,
+  "source_counts": {
+    "watermarked": 200,
+    "original": 0,
+    "ambiguous_or_uncertain": 0,
+    "raw": {
+      "watermarked": 200
+    }
+  },
+  "source_conclusion": "watermarked_source_confirmed_by_manifest_paths_and_generator_code",
+  "locality": {
+    "evaluated_samples": 200,
+    "mean_mask_area_ratio": 0.13359886169433594,
+    "mean_changed_area_ratio_inside_mask": 0.9407307072920098,
+    "mean_changed_area_ratio_outside_mask": 0.8006020027498679,
+    "mean_abs_diff_inside_mask": 35.551091010570524,
+    "mean_abs_diff_outside_mask": 10.446121487617493,
+    "mean_psnr_inside_mask": 14.699158891079597,
+    "mean_psnr_outside_mask": 24.67001243515728,
+    "mean_ssim_outside_mask": 0.6919954586029052,
+    "globally_changed_count": 200
+  },
+  "locality_conclusion": "unconstrained_diffusion_rerendering_stress_test",
+  "predicted_mask": {
+    "mean_predicted_mask_area_ratio": 1.0,
+    "mean_gt_mask_area_ratio": 0.13359886169433594,
+    "near_full_image_alarm_count": 200,
+    "total": 200
+  },
+  "localized_composite_40": {
+    "completed": true,
+    "iou": 0.9665185712973751,
+    "dice": 0.9829425828168702,
+    "precision": 0.9688461451110904,
+    "recall": 0.9975210389299878,
+    "bit_accuracy": 1.0,
+    "payload_recovery": 1.0,
+    "auth_success": 1.0,
+    "f3_unknown": 0.13333333333333333,
+    "reports_per_image": 3.0,
+    "gt_coverage": 0.9975177266768928,
+    "predicted_mask_area_ratio": 0.15695590972900392,
+    "eval_record": {
+      "command": [
+        "/root/miniconda3/bin/python",
+        "/root/autodl-tmp/watermark_exps/dfg_locguard/scripts/run_stage10a_evaluate_real_aigc_attacks.py",
+        "--project_root",
+        "/root/autodl-tmp/watermark_exps",
+        "--attack_dir",
+        "/data/watermark_exps/dfg_locguard/outputs/stage10a_attack_locality_audit/localized_composite_40",
+        "--manifest",
+        "/data/watermark_exps/dfg_locguard/outputs/stage10a_attack_locality_audit/localized_composite_40/stage10a_attack_manifest.csv",
+        "--output_dir",
+        "/data/watermark_exps/dfg_locguard/outputs/stage10a_attack_locality_audit/localized_composite_40_eval",
+        "--max_samples",
+        "40",
+        "--python_executable",
+        "/root/miniconda3/bin/python",
+        "--overwrite"
+      ],
+      "returncode": 0,
+      "runtime_seconds": 42.973949909210205,
+      "log_path": "/data/watermark_exps/dfg_locguard/outputs/stage10a_attack_locality_audit/localized_composite_40_eval/localized_composite_eval.log"
+    }
+  },
+  "interpretation": "Original Stage10A failure is mostly caused by global generative reconstruction outside the edit mask.",
+  "recommendation_rerun_full200_with_localized_compositing": true,
+  "recommendation_proceed_stage10b": true,
+  "constraints": {
+    "no_training": true,
+    "no_vlm": true,
+    "no_128bit_payload": true,
+    "watermark_embedding_modified": false,
+    "robust_payload_bits": 64,
+    "verification_original_access": false,
+    "gt_mask_usage": [
+      "evaluation_only"
+    ]
+  }
+}
