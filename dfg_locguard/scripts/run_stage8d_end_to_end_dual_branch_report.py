@@ -120,7 +120,8 @@ def ensure_dirs(output_dir: Path) -> dict[str, Path]:
 
 
 def sample_dirs(stage1_dir: Path, max_samples: int) -> list[Path]:
-    return sorted(path for path in stage1_dir.iterdir() if path.is_dir() and path.name.isdigit())[:max_samples]
+    # Stage 10A uses attack-aware sample ids such as object_removal_001_0783.
+    return sorted(path for path in stage1_dir.iterdir() if path.is_dir() and not path.name.startswith("."))[:max_samples]
 
 
 def load_stage8c_rows(stage8c_dir: Path, payload_variant: str) -> dict[str, dict[str, Any]]:
