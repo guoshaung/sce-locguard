@@ -49,7 +49,6 @@ class TestSCELocGuardApiSmoke(unittest.TestCase):
             response = service.verify(
                 VerifyRequest(
                     image_path=str(Path(tmpdir) / "missing.png"),
-                    mode="blind",
                     output_dir=str(Path(tmpdir) / "jobs"),
                 )
             )
@@ -61,7 +60,6 @@ class TestSCELocGuardApiSmoke(unittest.TestCase):
                 "/api/v1/watermark/verify",
                 json={
                     "image_path": str(Path(tmpdir) / "missing.png"),
-                    "mode": "blind",
                     "output_dir": str(Path(tmpdir) / "jobs"),
                 },
             )
@@ -77,15 +75,14 @@ class TestSCELocGuardApiSmoke(unittest.TestCase):
             response = service.verify(
                 VerifyRequest(
                     image_path=str(image_path),
-                    mode="blind",
                     output_dir=str(tmp / "jobs"),
                 )
             )
-            self.assertEqual(response.status, "not_implemented_single_image_pipeline")
+            self.assertEqual(response.status, "not_implemented")
             self.assertTrue(response.job_id)
             report = service.export_report(response.job_id or "")
             self.assertEqual(report["job_type"], "verify")
-            self.assertFalse(report["original_image_accessed"])
+            self.assertFalse(report["constraints"]["gt_mask_api_input"])
 
 
 if __name__ == "__main__":

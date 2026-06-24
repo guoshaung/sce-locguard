@@ -7,7 +7,15 @@ from pathlib import Path
 
 from fastapi import FastAPI, HTTPException
 
-from .schemas import EmbedRequest, EmbedResponse, VerifyRequest, VerifyResponse
+from .schemas import (
+    AIGCAttackRequest,
+    AIGCAttackResponse,
+    CapabilityResponse,
+    EmbedRequest,
+    EmbedResponse,
+    VerifyRequest,
+    VerifyResponse,
+)
 from .service import SCELocGuardService
 
 
@@ -36,7 +44,7 @@ def health() -> dict:
         "service": "sce-locguard",
         "algorithm_mode": "wrapper",
         "project_root_configured": bool(_project_root()),
-        "single_image_pipeline": "not_implemented_single_image_pipeline",
+        "single_image_pipeline": "mvp_runtime_detected_by_capabilities",
         "constraints": {
             "no_training": True,
             "no_vlm": True,
@@ -46,9 +54,22 @@ def health() -> dict:
     }
 
 
+@app.get("/api/v1/capabilities", response_model=CapabilityResponse)
+def capabilities() -> CapabilityResponse:
+    return get_service().capabilities()
+
+
 @app.post("/api/v1/watermark/embed", response_model=EmbedResponse)
 def embed(request: EmbedRequest) -> EmbedResponse:
     response = get_service().embed(request)
+    if response.status == "error":
+        raise HTTPException(status_code=400, detail={"status": response.status, "message": response.message})
+    return response
+
+
+@app.post("/api/v1/attack/aigc", response_model=AIGCAttackResponse)
+def attack_aigc(request: AIGCAttackRequest) -> AIGCAttackResponse:
+    response = get_service().attack_aigc(request)
     if response.status == "error":
         raise HTTPException(status_code=400, detail={"status": response.status, "message": response.message})
     return response

@@ -1,6 +1,9 @@
 """SCE-LocGuard API wrapper package."""
 
 from .schemas import (
+    AIGCAttackRequest,
+    AIGCAttackResponse,
+    CapabilityResponse,
     EmbedRequest,
     EmbedResponse,
     ReportRegion,
@@ -12,6 +15,9 @@ from .service import SCELocGuardService
 __all__ = [
     "EmbedRequest",
     "EmbedResponse",
+    "AIGCAttackRequest",
+    "AIGCAttackResponse",
+    "CapabilityResponse",
     "ReportRegion",
     "VerifyRequest",
     "VerifyResponse",

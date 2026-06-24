@@ -1,6 +1,7 @@
 dataset/
 dfg_locguard/data/
 dfg_locguard/outputs/
+dfg_locguard/api_jobs/
 checkpoints/
 results/
 *.pth
